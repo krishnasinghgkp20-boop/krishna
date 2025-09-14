@@ -1,34 +1,21 @@
-# Gradle files
-.gradle/
-build/
+import time
+import os
+import random
 
-# Local configuration file (sdk path, etc)
-local.properties
+colors = [
+    "\033[91m",  # Red
+    "\033[92m",  # Green
+    "\033[93m",  # Yellow
+    "\033[94m",  # Blue
+    "\033[95m",  # Magenta
+    "\033[96m",  # Cyan
+]
 
-# Log/OS Files
-*.log
+reset = "\033[0m"
 
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.aab
-*.apk
-output-metadata.json
-
-# IntelliJ
-*.iml
-.idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
-
-# Keystore files
-*.jks
-*.keystore
-
-# Google Services (e.g. APIs or Firebase)
-google-services.json
-
-# Android Profiling
-*.hprof
+while True:
+    os.system("clear")  # Screen clear karega
+    color = random.choice(colors)
+    current_time = time.strftime("%H:%M:%S")
+    print(f"{color}⌚ Time: {current_time} {reset}")
+    time.sleep(1)
